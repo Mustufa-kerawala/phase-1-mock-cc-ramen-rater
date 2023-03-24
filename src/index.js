@@ -46,12 +46,41 @@ document.addEventListener("DOMContentLoaded", function() {
                     let comment = document.querySelector(`#comment-display`)
                     comment.textContent = i.comment
                 }
-                // console.log(i.image)
+                
             }
         })
-        
-        
+    })
 
+    // Task num 4 adding a new ramen to the menu from the form and adding a click event to the new ramen
+    // Getting data for new ramen from #new-ramen form
+    let newRamenForm = document.querySelector('#new-ramen')
+    console.log(newRamenForm)
+    // Selecting input for new ramen name
+    let newRamenName = document.querySelector('#new-ramen input#new-name')
+    // Selecting input for new ramen restaurant
+    let newRamenRestaurant = document.querySelector('#new-ramen input#new-restaurant')
+    // Selecting input for new ramen image
+    let newRamenImage = document.querySelector('#new-ramen input#new-image')
+    // Selecting input for new ramen rating
+    let newRamenRating = document.querySelector('#new-ramen input#new-rating')
+    // Selecting input for new ramen comment
+    let newRamenComment = document.querySelector('#new-ramen input#new-comment')
+
+    // Adding a submit event to the form
+    newRamenForm.addEventListener('submit', function(e) {
+        e.preventDefault()
+        // Creating new img element
+        let newImg = document.createElement('img')
+        // Adding src to new img
+        newImg.src = newRamenImage.value
+        // Adding class to new img
+        newImg.className = "ramen-img"
+        // console.log(newImg)
+        // Adding new img to ramen-menu
+        let ramenMenu = document.querySelector('#ramen-menu')
+        ramenMenu.appendChild(newImg)
+
+        // 
 
     })
 
